@@ -7,9 +7,15 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "lint:yaml": "yaml-lint 'src/**/*.astro'"
   },
   "dependencies": {
     "astro": "^4.11.3"
+  },
+  "devDependencies": {
+    "eslint-plugin-yaml": "^1.0.3",
+    "js-yaml": "^4.1.0",
+    "yaml-lint": "^1.7.0"
   }
 }
