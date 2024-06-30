@@ -1,0 +1,35 @@
+name: Deploy Astro Project
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Astro project
+        run: npm run build
+
+      - name: Start Astro project
+        run: npm run start -- --port 4321
+        background: true
+
+      - name: Wait for Astro project to start
+        run: sleep 10  # Adjust time as needed
+
+      - name: Run tests or further actions (optional)
+        run: npm test  # Replace with your test command if applicable
