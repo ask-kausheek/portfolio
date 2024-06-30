@@ -1,5 +1,5 @@
 {
-  "name": "celestial-cloud",
+  "name": "portfolio",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -8,13 +8,16 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "lint:yaml": "yaml-lint 'src/**/*.astro'"
+    "lint:yaml": "yaml-lint 'src/**/*.astro'",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "astro": "^4.11.3"
   },
   "devDependencies": {
     "eslint-plugin-yaml": "^1.0.3",
+    "gh-pages": "^6.1.1",
     "js-yaml": "^4.1.0",
     "yaml-lint": "^1.7.0"
   }
